@@ -1,4 +1,4 @@
-module github.com/raycat/quokka
+module github.com/raycatso/quokka
 
 go 1.17
 
