@@ -7,17 +7,20 @@ import (
 
 	"github.com/peterbourgon/ff/v3/ffcli"
 	"github.com/raycatso/quokka/pkg/rootcmd"
+	"github.com/raycatso/quokka/pkg/runcmd"
 	"github.com/raycatso/quokka/pkg/versioncmd"
 )
 
 func main() {
 	var (
 		rootCmd    = rootcmd.New()
+		runCmd     = runcmd.New()
 		versionCmd = versioncmd.New()
 	)
 
 	rootCmd.Subcommands = []*ffcli.Command{
 		versionCmd,
+		runCmd,
 	}
 
 	if err := rootCmd.Parse(os.Args[1:]); err != nil {
